@@ -1,0 +1,32 @@
+<h1>Hello world</h1>
+
+<div class="error list">
+  <% if(messages.length > 0) { %>
+    <h2>Error found</h2>
+
+    <ul>
+    <% messages.forEach(function(message) { %>
+      <li><%= message %></li>
+    <% }) %>
+    </ul>
+  <% }%>
+</div>
+
+<form action="#" method="post" data-parsley-validate>
+  <label for="email">Email</label>
+  <input
+  type="email"
+  name="user[email]"
+  value=""
+  required
+  data-parsley-required-message="TYPE YO EMAIL BRO"
+  ><br>
+
+  <label for="username">Username</label>
+  <input type="text" name="user[username]" value="" required><br>
+
+  <label for="password">Password</label>
+  <input type="password" name="user[password]" value="" data-parsley-minlength="4" required><br>
+
+  <input type="submit" value="Submit form">
+</form>
